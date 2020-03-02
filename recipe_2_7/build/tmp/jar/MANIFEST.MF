@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: recipe_2_7
+Implementation-Version: 0.0.1-SNAPSHOT
+Main-Class: com.apress.springrecipes.shop.Main
+
