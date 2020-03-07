@@ -8,6 +8,11 @@ import com.apress.springrecipes.sequence.SequenceGenerator;
 @Configuration
 public class SequenceGeneratorConfiguration {
 
+	public SequenceGeneratorConfiguration() {
+		System.out.println("created");
+		// TODO Auto-generated constructor stub
+	}
+	
     @Bean 	//Set Bean name -> @Bean(name="mys1")
     public SequenceGenerator sequenceGenerator() {
 

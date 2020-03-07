@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.springframework.stereotype.Component;
 
-@Component("sequenceDao")
+@Component
 public class SequenceDaoImpl implements SequenceDao {
 	private final Map<String, Sequence> sequences = new HashMap<>();
 	private final Map<String, AtomicInteger> values = new HashMap<>();

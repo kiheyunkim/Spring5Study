@@ -39,7 +39,7 @@ public class Main {
         //System.out.println(generator.getSequence());
         //System.out.println(generator.getSequence());
         
-        SequenceDao sequenceDao = context.getBean(SequenceDao.class);
+        SequenceDao sequenceDao = (SequenceDao)context.getBean(SequenceDao.class);
         
         System.out.println(sequenceDao.getNextValue("IT"));
         System.out.println(sequenceDao.getNextValue("IT"));
