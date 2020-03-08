@@ -9,6 +9,10 @@ import org.springframework.stereotype.Component;
 public class ConfigClassTest implements ConfigClass{
 	private Integer index =  new Integer(0);
 	
+	public ConfigClassTest() {
+		System.out.println("hi");
+	}
+	
 	public int GetIndex() {
 		index = index + 1;
 		return index;

@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.annotation.PostConstruct;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -37,4 +39,9 @@ public class HomeController {
 		
 		return "home";
 	}	
+	
+	@PostConstruct
+	public void Print() {
+		System.out.println("Start Spring~~");
+	}
 }
