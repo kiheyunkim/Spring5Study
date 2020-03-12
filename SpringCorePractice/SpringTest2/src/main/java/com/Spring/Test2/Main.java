@@ -7,11 +7,11 @@ import com.Spring.Shape.Circle;
 import com.Spring.Shape.Square;
 import com.Spring.Shape.Triangle;
 
-@EnableAspectJAutoProxy
+
 public class Main {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context 
-			= new AnnotationConfigApplicationContext("com.Spring.ShapeConfig");
+			= new AnnotationConfigApplicationContext(SpringConfig.class) ;
 		//	= new AnnotationConfigApplicationContext(ShapeConfiguration.class); 
 		
 		//Log log = LogFactory.getLog(Main.class);
