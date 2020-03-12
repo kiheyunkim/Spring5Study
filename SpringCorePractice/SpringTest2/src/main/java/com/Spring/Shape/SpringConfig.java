@@ -5,10 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-import com.Spring.ShapeConfig.ShapeConfiguration;
 @Configuration
-@EnableAspectJAutoProxy
-@ComponentScan
+@EnableAspectJAutoProxy(proxyTargetClass = true)
+@ComponentScan(basePackages = { "com.Spring.ShapeConfig", "com.Spring.Shape"})
 public class SpringConfig {
 	
 }

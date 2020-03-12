@@ -1,9 +1,9 @@
 package com.Spring.Test2;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.Spring.Shape.Circle;
+import com.Spring.Shape.SpringConfig;
 import com.Spring.Shape.Square;
 import com.Spring.Shape.Triangle;
 
