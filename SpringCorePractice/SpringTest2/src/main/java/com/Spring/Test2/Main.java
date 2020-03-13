@@ -7,6 +7,7 @@ import com.Spring.Shape.Shape;
 import com.Spring.Shape.SpringConfig;
 import com.Spring.Shape.Square;
 import com.Spring.Shape.Triangle;
+import com.Spring.ShapeConfig.LoggingRequired;
 
 
 public class Main {
@@ -28,6 +29,11 @@ public class Main {
 		Shape circle = context.getBean("getCircle",Shape.class);
 		System.out.println(circle.getArea());
 		//log.info("Circle Area = " + circle.getArea());
+		
+		Test2 t = context.getBean(Test2.class);
+		System.out.println(t.getArea());
+		System.out.println(t.getNumber());
+	
 		
 		context.close();
 	}

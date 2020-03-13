@@ -11,7 +11,6 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import com.Spring.Shape.Circle;
 import com.Spring.Shape.Square;
 import com.Spring.Shape.Triangle;
-import com.Spring.Test2.LoggingAspect;
 
 @Configuration
 @PropertySource("classpath:info.properties")

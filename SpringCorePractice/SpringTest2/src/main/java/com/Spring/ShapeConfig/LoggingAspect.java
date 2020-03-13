@@ -1,26 +1,36 @@
-package com.Spring.Test2;
+package com.Spring.ShapeConfig;
 
 import java.util.Arrays;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-@Aspect
+//@Aspect
 @Component
-public class LoggingAspect {
-	private Log log = LogFactory.getLog(LoggingAspect.class);
+public class LoggingAspect /*implements Ordered*/{
+	private Logger log = LoggerFactory.getLogger(LoggingAspect.class);
 	
 	@Before("execution(* *.getArea(..))")
 	public void logBefore(JoinPoint joinPoint) {
 		log.info("Before Aspect Called" + joinPoint.getSignature().getName() + " / "
 				+ Arrays.toString(joinPoint.getArgs()));
+		
+		
+		log.info("JoinPoint Info\n");
+		log.info("Join point kind : {}", joinPoint.getKind());
+		log.info("Signature declaring type : {}", joinPoint.getSignature().getDeclaringTypeName());
+		log.info("Join point kind : {}", joinPoint.getSignature().getName());
+		log.info("Join point kind : {}", Arrays.toString(joinPoint.getArgs()));
+		log.info("Traget class : {}", joinPoint.getTarget().getClass().getName());
+		log.info("This class : {}", joinPoint.getThis().getClass().getName());
+		
 	}
 	
 	@After("execution(* *.getArea(..))")

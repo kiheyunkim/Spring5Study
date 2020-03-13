@@ -2,6 +2,9 @@ package com.Spring.Shape;
 
 import org.springframework.stereotype.Component;
 
+import com.Spring.ShapeConfig.LoggingRequired;
+
+
 @Component
 public class Circle implements Shape {
 	int radius;
