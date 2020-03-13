@@ -48,7 +48,8 @@ public class ShapeConfiguration {
 		return circle;
 	}
 	
-	@Bean LoggingAspect getLog() {
+	@Bean
+	public LoggingAspect getLog() {
 		return new LoggingAspect();
 	}
 	

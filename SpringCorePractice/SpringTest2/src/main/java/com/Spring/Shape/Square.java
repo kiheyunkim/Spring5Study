@@ -9,7 +9,7 @@ public class Square implements Shape {
 	private int height;
 	
 	public Square() {
-		
+		super();
 	}
 	
 	public Square(int width, int height) {

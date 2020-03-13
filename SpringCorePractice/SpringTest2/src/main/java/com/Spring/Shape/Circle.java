@@ -7,7 +7,7 @@ public class Circle implements Shape {
 	int radius;
 	
 	public Circle() {
-	
+		super();
 	}
 	
 	public Circle(int radius){
@@ -22,3 +22,4 @@ public class Circle implements Shape {
 	}
 
 }
+	

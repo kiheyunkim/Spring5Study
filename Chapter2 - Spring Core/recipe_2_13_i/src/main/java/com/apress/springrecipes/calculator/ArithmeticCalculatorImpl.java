@@ -4,14 +4,13 @@ package com.apress.springrecipes.calculator;
 import org.springframework.stereotype.Component;
 
 @Component("arithmeticCalculator")
-public class ArithmeticCalculatorImpl implements ArithmeticCalculator {
+public class ArithmeticCalculatorImpl implements Shape {
 
     @Override
-    public double add(double a, double b) throws Exception{
+    public double add(double a, double b){
         double result = a + b;
         System.out.println(a + " + " + b + " = " + result);
-        throw new IllegalArgumentException("hi");
-        //return result;
+        return result;
     }
 
     @Override

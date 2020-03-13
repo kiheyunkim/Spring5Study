@@ -11,8 +11,8 @@ public class Main {
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(CalculatorConfiguration.class);
 
-        ArithmeticCalculator arithmeticCalculator =
-                context.getBean("arithmeticCalculator", ArithmeticCalculator.class);
+        Shape arithmeticCalculator =
+                context.getBean("arithmeticCalculator", Shape.class);
         arithmeticCalculator.add(1, 2);
         arithmeticCalculator.sub(4, 3);
         arithmeticCalculator.mul(2, 3);
@@ -21,6 +21,7 @@ public class Main {
         UnitCalculator unitCalculator = context.getBean("unitCalculator", UnitCalculator.class);
         unitCalculator.kilogramToPound(10);
         unitCalculator.kilometerToMile(5);
+
         
         ((ConfigurableApplicationContext)context).close();
     }

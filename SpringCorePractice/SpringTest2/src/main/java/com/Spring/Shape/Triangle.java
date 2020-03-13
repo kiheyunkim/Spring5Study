@@ -8,7 +8,7 @@ public class Triangle implements Shape{
 	int bottom;
 	
 	public Triangle() {
-		
+		super();
 	}
 	
 	public Triangle(int height, int bottom){

@@ -1,6 +1,6 @@
 package com.apress.springrecipes.calculator;
 
-public interface ArithmeticCalculator {
+public interface Shape {
 
     public double add(double a, double b) throws Exception;
 
