@@ -6,6 +6,7 @@ import com.Spring.ShapeConfig.LoggingRequired;
 
 
 @Component
+@LoggingRequired
 public class Circle implements Shape {
 	int radius;
 	

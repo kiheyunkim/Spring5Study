@@ -2,7 +2,10 @@ package com.Spring.Shape;
 
 import org.springframework.stereotype.Component;
 
+import com.Spring.ShapeConfig.LoggingRequired;
+
 @Component
+@LoggingRequired
 public class Triangle implements Shape{
 	int height;
 	int bottom;
