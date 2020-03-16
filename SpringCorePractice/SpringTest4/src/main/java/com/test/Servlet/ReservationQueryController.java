@@ -33,7 +33,7 @@ public class ReservationQueryController {
 		if(courtName !=null) {
 			reservations = reservationService.query(courtName);
 		}
-		model.addAttribute("reservation",reservations);
+		model.addAttribute("reservations",reservations);
 		return "reservationQuery";
 	}
 }
