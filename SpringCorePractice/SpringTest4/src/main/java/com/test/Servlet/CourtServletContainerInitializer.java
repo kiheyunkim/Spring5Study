@@ -9,7 +9,7 @@ import javax.servlet.ServletRegistration;
 
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
-
+/*
 public class CourtServletContainerInitializer implements ServletContainerInitializer{
 
 	@Override
@@ -23,4 +23,29 @@ public class CourtServletContainerInitializer implements ServletContainerInitial
 		courtRegistration.addMapping("/");
 	}
 
+}
+*/
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+public class CourtServletContainerInitializer 
+	extends AbstractAnnotationConfigDispatcherServletInitializer{
+
+	@Override
+	protected Class<?>[] getRootConfigClasses() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses() {
+		// TODO Auto-generated method stub
+		return new Class[] {CourtConfiguration.class};
+	}
+
+	@Override
+	protected String[] getServletMappings() {
+		// TODO Auto-generated method stub
+		return new String[] {"/"};
+	}
+	
 }
