@@ -20,7 +20,7 @@
 				<th>Hour</th>
 				<th>Player</th>
 			</tr>
-			<c:forEach items="${reservations}" var="reservation">
+			<c:forEach items="${reservation}" var="reservation">
 			<tr>
 				<td>${reservation.courtName}</td>
 				<td><fmt:formatDate value="${reservation.date}" pattern="yyyy-MM-dd" /></td>

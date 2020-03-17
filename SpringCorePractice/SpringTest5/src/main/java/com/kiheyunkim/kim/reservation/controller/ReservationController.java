@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.kiheyunkim.kim.reservation.Reservation;
+import com.kiheyunkim.kim.reservation.model.Reservation;
 import com.kiheyunkim.kim.reservation.service.ReservationService;
 
 @Controller
-@Lazy
 @RequestMapping("/reservationQuery")
 public class ReservationController {
 	private final ReservationService reservationService;
 	
+	@Lazy
 	public ReservationController(ReservationService reservationService) {
 		this.reservationService = reservationService;
 	}
@@ -30,10 +30,8 @@ public class ReservationController {
 	
 	@PostMapping
 	public String submitForm(@RequestParam("courtName")String courtName, Model model) {
-		List<Reservation> reservations = java.util.Collections.emptyList();
-		if(courtName!= null ) {
-			reservations  = reservationService.query(courtName);
-		}
+		
+		List<Reservation> reservations  = reservationService.query(courtName);
 		
 		model.addAttribute("reservation",reservations);
 		return "reservationQuery";
