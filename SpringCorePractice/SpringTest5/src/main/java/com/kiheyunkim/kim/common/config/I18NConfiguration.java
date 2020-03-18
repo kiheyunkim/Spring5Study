@@ -2,8 +2,10 @@ package com.kiheyunkim.kim.common.config;
 
 import java.util.Locale;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -30,7 +32,7 @@ public class I18NConfiguration implements WebMvcConfigurer {
 	}
 	
 	/*
-	@Bean
+	@Bean(name = {"localeResolver"})
 	public LocaleResolver sessionLocaleResolver() {
 		SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
 		sessionLocaleResolver.setDefaultLocale(new Locale("en"));
@@ -38,6 +40,14 @@ public class I18NConfiguration implements WebMvcConfigurer {
 		return sessionLocaleResolver;
 	}
 	*/
+	
+	@Bean(name = {"messageSource"})
+	public MessageSource messageSources() {
+		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+		messageSource.addBasenames("messages");
+		return messageSource;
+	}
+	
 	@Bean(name = {"localeResolver"})
 	public LocaleResolver cookieLocaleResolver() {
 		CookieLocaleResolver cookieLocaleResolver = new CookieLocaleResolver();
@@ -47,4 +57,6 @@ public class I18NConfiguration implements WebMvcConfigurer {
 		
 		return cookieLocaleResolver;
 	}
+	
+	
 }
