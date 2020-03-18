@@ -1,5 +1,6 @@
 package com.kiheyunkim.kim.common.config;
 
+import com.kiheyunkim.kim.common.config.SpringConfiguration;
 import java.util.Set;
 
 import javax.servlet.ServletContainerInitializer;

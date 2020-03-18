@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.kiheyunkim.kim.common.config.ReservationNotAvailableException;
 import com.kiheyunkim.kim.player.model.Player;
 import com.kiheyunkim.kim.reservation.model.Reservation;
 import com.kiheyunkim.kim.sportType.model.SportType;
@@ -35,8 +36,11 @@ public class ReservationServiceImp implements ReservationService {
 	public List<Reservation> query(String courtName) {
 		// TODO Auto-generated method stub
 		
+		throw new ReservationNotAvailableException();
+		/*
 		return this.reservations.stream()
 				.filter(element -> element.getCourtName().equals(courtName))
 				.collect(Collectors.toList());
+		*/
 	}
 }
