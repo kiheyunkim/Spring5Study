@@ -32,7 +32,6 @@ public class ReservationController {
 	public String submitForm(@RequestParam("courtName")String courtName, Model model) {
 		
 		List<Reservation> reservations  = reservationService.query(courtName);
-		
 		model.addAttribute("reservation",reservations);
 		return "reservationQuery";
 	}

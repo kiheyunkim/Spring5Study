@@ -29,5 +29,8 @@
 			</tr>
 			</c:forEach>
 		</table>
+		<br/>
+		check : ${ranValue}
+		elapse Time: ${handlingTime}ms
 	</body>
 </html>
