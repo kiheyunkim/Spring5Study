@@ -2,15 +2,22 @@ package com.kiheyunkim.kim.reservation.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.kiheyunkim.kim.player.model.Player;
 import com.kiheyunkim.kim.sportType.model.SportType;
 
 public class Reservation {
 	private String courtName;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
 	private int hour;
 	private Player player;
 	private SportType sportType;
+	
+	public Reservation() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Reservation(String courtName, Date date, int hour, Player player, SportType sportType) {
 		this.courtName = courtName;

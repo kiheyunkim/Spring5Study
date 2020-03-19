@@ -11,6 +11,12 @@ public class ReservationNotAvailableException extends RuntimeException{
 	private Date date;
 	private int hour;
 	
+	public ReservationNotAvailableException(String courtName, Date date, int hour) {
+		this.courtName = courtName;
+		this.date = date;
+		this.hour = hour;
+	}
+	
 	public void setCourtName(String courtName) {
 		this.courtName = courtName;
 	}

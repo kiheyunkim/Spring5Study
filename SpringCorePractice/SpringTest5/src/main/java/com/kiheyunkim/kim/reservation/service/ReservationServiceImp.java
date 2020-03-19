@@ -5,6 +5,7 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
@@ -34,13 +35,27 @@ public class ReservationServiceImp implements ReservationService {
 	
 	@Override
 	public List<Reservation> query(String courtName) {
-		// TODO Auto-generated method stub
 		
-		throw new ReservationNotAvailableException();
-		/*
 		return this.reservations.stream()
 				.filter(element -> element.getCourtName().equals(courtName))
-				.collect(Collectors.toList());
-		*/
+				.collect(Collectors.toList());		
+	}
+
+	@Override
+	public void make(Reservation reservation) throws ReservationNotAvailableException {
+		long cnt = reservations.stream()
+				.filter(made -> Objects.equals(made.getCourtName(), reservation.getCourtName()))
+				.filter(made -> Objects.equals(made.getDate(),reservation.getDate()))
+				.filter(made -> made.getHour() == reservation.getHour())
+				.count();
+		
+		if(cnt > 0) {
+			throw new ReservationNotAvailableException(reservation.getCourtName(),
+					reservation.getDate(), reservation.getHour());
+		}else {
+			reservations.add(reservation);
+		}
+				
+		
 	}
 }
