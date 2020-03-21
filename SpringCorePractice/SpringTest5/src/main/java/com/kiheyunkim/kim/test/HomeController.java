@@ -1,4 +1,4 @@
-package com.kiheyunkim.kim;
+package com.kiheyunkim.kim.test;
 
 import java.text.DateFormat;
 import java.util.Date;

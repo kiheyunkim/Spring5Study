@@ -24,6 +24,7 @@ public class ReservationServiceImp implements ReservationService {
 	public final List<Reservation> reservations = new ArrayList<Reservation>();
 	
 	public ReservationServiceImp() {
+		/*
 		reservations.add(new Reservation("Tennis #1", 
 				Date.from(LocalDate.of(2008, 1, 4).atStartOfDay(ZoneId.systemDefault()).toInstant())
 				, 16, new Player("James","N/A"), TENNIS));
@@ -31,6 +32,7 @@ public class ReservationServiceImp implements ReservationService {
 		reservations.add(new Reservation("Tennis #2", 
 				Date.from(LocalDate.of(2008, 1, 14).atStartOfDay(ZoneId.systemDefault()).toInstant()),
 				20, new Player("James", "N/A"), TENNIS));
+		*/
 	}
 	
 	@Override

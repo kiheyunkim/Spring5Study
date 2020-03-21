@@ -3,9 +3,27 @@ package com.kiheyunkim.kim.common.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.servlet.AsyncHandlerInterceptor;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+public class MeasurementInterceptor implements AsyncHandlerInterceptor{
+	public static final String START_TIME = "startTime";
+	 
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+	
+		if(request.getAttribute(START_TIME) == null) {
+			request.setAttribute(START_TIME, System.currentTimeMillis());
+		}
+		 
+		return true;
+	}
+	
+	
+}
+/*
 public class MeasurementInterceptor implements HandlerInterceptor{
 	
 	@Override
@@ -32,3 +50,4 @@ public class MeasurementInterceptor implements HandlerInterceptor{
 			Exception ex) throws Exception {
 	}
 }
+*/
