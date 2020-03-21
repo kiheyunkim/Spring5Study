@@ -12,7 +12,7 @@
 	
 	<!-- Application Loggers -->
 	<logger name="com.kiheyunkim.kim">
-		<level value="info" />
+		<level value="DEBUG" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->

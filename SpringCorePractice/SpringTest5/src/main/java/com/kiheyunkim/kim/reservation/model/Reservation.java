@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.kiheyunkim.kim.player.model.Player;
+import com.kiheyunkim.kim.player.Player;
 import com.kiheyunkim.kim.sportType.model.SportType;
 
 public class Reservation {

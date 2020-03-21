@@ -1,6 +1,7 @@
 package com.kiheyunkim.kim.reservation.controller;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
@@ -29,11 +30,21 @@ public class ReservationController {
 	}
 	
 	@PostMapping
-	public String submitForm(@RequestParam("courtName")String courtName, Model model) {
-		
-		List<Reservation> reservations  = reservationService.query(courtName);
-		model.addAttribute("reservation",reservations);
-		return "reservationQuery";
+	public Callable<String> submitForm(@RequestParam("courtName")String courtName, Model model) {
+		return ()->{
+			List<Reservation> reservations = java.util.Collections.emptyList();
+			if(courtName != null) {
+				Thread.sleep(2000);
+				reservations = reservationService.query(courtName);
+			}
+			model.addAttribute("reservations",reservations);
+			return "reservationQuery";
+		};
+		/*
+			List<Reservation> reservations  = reservationService.query(courtName);
+			model.addAttribute("reservation",reservations);
+			return "reservationQuery";
+		*/
 	}
 	
 }

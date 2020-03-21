@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.kiheyunkim.kim.common.config.ReservationNotAvailableException;
-import com.kiheyunkim.kim.player.model.Player;
+import com.kiheyunkim.kim.player.Player;
 import com.kiheyunkim.kim.reservation.model.Reservation;
 import com.kiheyunkim.kim.sportType.model.SportType;
 

@@ -21,6 +21,7 @@ public class SpringServletContainerInitializer implements ServletContainerInitia
 		
 		DispatcherServlet dispatcherServlet = new DispatcherServlet(applicationContext);
 		ServletRegistration.Dynamic courtRegistration = ctx.addServlet("kim", dispatcherServlet);
+		courtRegistration.setAsyncSupported(true);
 		courtRegistration.setLoadOnStartup(1);
 		courtRegistration.addMapping("/");
 	}
