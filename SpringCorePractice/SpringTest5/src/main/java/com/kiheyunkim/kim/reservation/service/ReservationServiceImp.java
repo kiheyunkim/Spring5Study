@@ -1,8 +1,10 @@
 package com.kiheyunkim.kim.reservation.service;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -11,7 +13,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.kiheyunkim.kim.common.config.ReservationNotAvailableException;
-import com.kiheyunkim.kim.player.Player;
+import com.kiheyunkim.kim.player.model.Player;
 import com.kiheyunkim.kim.reservation.model.Reservation;
 import com.kiheyunkim.kim.sportType.model.SportType;
 
@@ -32,7 +34,7 @@ public class ReservationServiceImp implements ReservationService {
 		reservations.add(new Reservation("Tennis #2", 
 				Date.from(LocalDate.of(2008, 1, 14).atStartOfDay(ZoneId.systemDefault()).toInstant()),
 				20, new Player("James", "N/A"), TENNIS));
-		*/
+		 */
 	}
 	
 	@Override
@@ -59,5 +61,12 @@ public class ReservationServiceImp implements ReservationService {
 		}
 				
 		
+	}
+
+	@Override
+	public List<SportType> getAllSportTypes() {
+		List<SportType> retval = new ArrayList<SportType>();
+		retval.addAll(Arrays.asList(TENNIS, SOCCER));
+		return retval;
 	}
 }

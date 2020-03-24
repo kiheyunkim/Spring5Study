@@ -1,17 +1,18 @@
 package com.kiheyunkim.kim.reservation.model;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.kiheyunkim.kim.player.Player;
+import com.kiheyunkim.kim.player.model.Player;
 import com.kiheyunkim.kim.sportType.model.SportType;
 
 public class Reservation {
 	private String courtName;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate date;
+	private Date date;
 	private int hour;
 	private Player player;
 	private SportType sportType;
@@ -20,12 +21,12 @@ public class Reservation {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Reservation(String courtName, LocalDate date2, int hour, Player player, SportType tennis) {
+	public Reservation(String courtName, LocalDate date, int hour, Player player, SportType sportType) {
 		this.courtName = courtName;
-		this.date = date2;
+		this.date = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		this.hour = hour;
 		this.player = player;
-		this.sportType = tennis;
+		this.sportType = sportType;
 	}
 	
 	public void setCourtName(String courtName) {
@@ -36,11 +37,11 @@ public class Reservation {
 		return courtName;
 	}
 	
-	public void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
 	

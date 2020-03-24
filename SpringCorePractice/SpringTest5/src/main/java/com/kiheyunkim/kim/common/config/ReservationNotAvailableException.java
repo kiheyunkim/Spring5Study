@@ -1,6 +1,5 @@
 package com.kiheyunkim.kim.common.config;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 public class ReservationNotAvailableException extends RuntimeException{
@@ -9,10 +8,10 @@ public class ReservationNotAvailableException extends RuntimeException{
 	 */
 	private static final long serialVersionUID = 1L;
 	private String courtName;
-	private LocalDate date;
+	private Date date;
 	private int hour;
 	
-	public ReservationNotAvailableException(String courtName, LocalDate date, int hour) {
+	public ReservationNotAvailableException(String courtName, Date date, int hour) {
 		this.courtName = courtName;
 		this.date = date;
 		this.hour = hour;
@@ -26,11 +25,11 @@ public class ReservationNotAvailableException extends RuntimeException{
 		return courtName;
 	}
 	
-	public void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
 	
