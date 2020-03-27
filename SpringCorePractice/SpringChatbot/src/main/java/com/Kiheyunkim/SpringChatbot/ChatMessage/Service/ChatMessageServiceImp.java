@@ -38,15 +38,14 @@ public class ChatMessageServiceImp implements ChatMessageService {
 			//Exception
 		}
 		
-		answerTree.put(addMessage.getQuestion(),addMessage.getAnswer());
-		
-		String inputResult = answerTree.put(addMessage.getQuestion(), addMessage.getAnswer());
-		
+		String retMsg = answerTree.put(addMessage.getQuestion(),addMessage.getAnswer());
+		if(retMsg == null) {
+			
+		} 
+		else {
+			
+		}
 		return null;
-	}
-	
-	private Optional<String> makeResult(String input){
-		return Optional.of(input);
 	}
 
 }
