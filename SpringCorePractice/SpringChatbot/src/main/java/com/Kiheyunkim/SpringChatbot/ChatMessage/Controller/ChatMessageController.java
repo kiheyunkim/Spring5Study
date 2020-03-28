@@ -26,13 +26,15 @@ public class ChatMessageController {
 	@RequestMapping(value = "/get", method = RequestMethod.POST)
 	public @ResponseBody ChatMessage getMessage(ChatMessage chatMessage) {
 		System.out.println(chatMessage.getMessage());
-		chatMessageService.getAnswer(chatMessage);
+		ChatMessage answer = chatMessageService.getAnswer(chatMessage);
 		
-		return null;
+		return answer;
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public void addMessage(ChatAddMessage chatAddMessage) {
-		chatMessageService.addAnswer(chatAddMessage);
+	public @ResponseBody ChatMessage addMessage(ChatAddMessage chatAddMessage) {
+		ChatMessage answer =  chatMessageService.addAnswer(chatAddMessage);
+		
+		return answer;
 	}
 }
