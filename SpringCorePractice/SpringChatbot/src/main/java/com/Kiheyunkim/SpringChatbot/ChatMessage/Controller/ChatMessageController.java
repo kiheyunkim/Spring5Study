@@ -3,6 +3,7 @@ package com.Kiheyunkim.SpringChatbot.ChatMessage.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,7 +24,7 @@ public class ChatMessageController {
 		this.chatMessageService = chatMessageService;
 	}
 	
-	@RequestMapping(value = "/get", method = RequestMethod.POST)
+	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	public @ResponseBody ChatMessage getMessage(ChatMessage chatMessage) {
 		System.out.println(chatMessage.getMessage());
 		ChatMessage answer = chatMessageService.getAnswer(chatMessage);
@@ -36,5 +37,10 @@ public class ChatMessageController {
 		ChatMessage answer =  chatMessageService.addAnswer(chatAddMessage);
 		
 		return answer;
+	}
+	
+	@GetMapping(value = "/hi")
+	public String defaultPage() {
+		return "home";
 	}
 }
