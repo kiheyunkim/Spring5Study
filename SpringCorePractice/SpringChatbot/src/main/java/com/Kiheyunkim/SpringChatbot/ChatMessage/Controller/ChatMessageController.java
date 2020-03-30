@@ -41,6 +41,7 @@ public class ChatMessageController {
 	
 	@GetMapping(value = "/hi")
 	public String defaultPage() {
+		System.out.println("hi");
 		return "home";
 	}
 }
