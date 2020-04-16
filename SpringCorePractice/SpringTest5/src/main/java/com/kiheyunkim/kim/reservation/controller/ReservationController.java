@@ -73,18 +73,13 @@ public class ReservationController {
 			Collection<Reservation> reservations = reservationService.query(courtName);
 			try {
 				for(Reservation reservation : reservations) {
-					try {
-						Thread.sleep(125);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+					Thread.sleep(100);
 					emitter.send(reservation);
 				}
-				emitter.complete();
-			} catch (IOException e) {
+			} catch (Exception e) {
 				emitter.completeWithError(e);
 			}
+			emitter.complete();
 		});
 		
 		return emitter;

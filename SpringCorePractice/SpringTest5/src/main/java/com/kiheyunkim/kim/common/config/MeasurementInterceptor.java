@@ -29,15 +29,15 @@ public class MeasurementInterceptor implements AsyncHandlerInterceptor{
 		System.out.println("Response-Processing-Time: " + (endTime - startTime) + "ms.");
 		System.out.println("Response-Processing-Thread: " + Thread.currentThread().getName());
 	}
-	
+		
 	@Override
 	public void afterConcurrentHandlingStarted(HttpServletRequest request,
-			HttpServletResponse response, Object handler) {
+			HttpServletResponse response, Object handler) throws Exception{
 		long startTime = (Long) request.getAttribute(START_TIME);
 		request.setAttribute(START_TIME, System.currentTimeMillis());
 		long endTime = System.currentTimeMillis();
 		
-		System.out.println("Request-Processing-Time: " + (endTime - startTime ) + "ms. ");
-		System.out.println("Request-Processing-Thread: " + Thread.currentThread().getName());
+		System.out.println("ConCurrent Request-Processing-Time: " + (endTime - startTime ) + "ms. ");
+		System.out.println("ConCurrent Request-Processing-Thread: " + Thread.currentThread().getName());
 	}
 }
