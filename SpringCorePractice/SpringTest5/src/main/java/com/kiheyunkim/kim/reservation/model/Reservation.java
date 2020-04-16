@@ -18,14 +18,14 @@ public class Reservation {
 	private SportType sportType;
 	
 	public Reservation() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
-	public Reservation(String courtName, LocalDate date, int hour, Player player, SportType sportType) {
+	public Reservation(String courtName, LocalDate date, int hour, Player player2, SportType sportType) {
 		this.courtName = courtName;
 		this.date = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		this.hour = hour;
-		this.player = player;
+		this.player = player2;
 		this.sportType = sportType;
 	}
 	

@@ -10,4 +10,5 @@ public interface ReservationService {
 	public List<Reservation> query(String courtName);
 	void make(Reservation reservation) throws ReservationNotAvailableException;
 	public List<SportType> getAllSportTypes();
+	public int getSize();
 }
