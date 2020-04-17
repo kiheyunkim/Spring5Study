@@ -73,7 +73,7 @@ public class ReservationController {
 			Collection<Reservation> reservations = reservationService.query(courtName);
 			try {
 				for(Reservation reservation : reservations) {
-					Thread.sleep(100);
+					Thread.sleep(10);
 					emitter.send(reservation);
 				}
 			} catch (Exception e) {

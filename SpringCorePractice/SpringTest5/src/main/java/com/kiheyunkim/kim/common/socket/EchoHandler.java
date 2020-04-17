@@ -7,12 +7,14 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 public class EchoHandler extends TextWebSocketHandler {
 	
 	@Override
-	public void afterConnectionEstablished(WebSocketSession session) throws Exception{
+	public void afterConnectionEstablished(WebSocketSession session)
+			throws Exception{
 		session.sendMessage(new TextMessage("CONNECTION ESTABLISHED"));
 	}
 	
 	@Override
-	public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception{
+	public void handleTextMessage(WebSocketSession session, TextMessage message) 
+			throws Exception{
 		String msg = message.getPayload();
 		session.sendMessage(new TextMessage("RECEIVED: " + msg));
 	}
