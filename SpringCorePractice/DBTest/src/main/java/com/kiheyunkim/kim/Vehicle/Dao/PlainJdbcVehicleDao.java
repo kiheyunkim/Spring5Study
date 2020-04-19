@@ -6,15 +6,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowCallbackHandler;
+import org.springframework.jdbc.core.RowMapper;
 
 
 public class PlainJdbcVehicleDao implements VehicleDao{
+	public class VehicleRowMapper implements RowMapper<Vehicle>{
+		@Override
+		public Vehicle mapRow(ResultSet rs, int rowNum) throws SQLException {
+			// TODO Auto-generated method stub
+			return toVehicle(rs);
+		}
+	}
+	
 	
 	private static final String INSERT_SQL = "INSERT INTO VEHICLE (COLOR, WHEEL,SEAT, VEHICLE_NO)"
 			+ "VALUES (?,?,?,?)";
@@ -96,6 +107,18 @@ public class PlainJdbcVehicleDao implements VehicleDao{
 
 	@Override
 	public List<Vehicle> findAll() throws SQLException {
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		
+		List<Map<String,Object>> rows = jdbcTemplate.queryForList(SELECT_ALL_SQL);
+		return rows.stream().map(row->{
+			Vehicle vehicle = new Vehicle();
+			vehicle.setVehicleNo((String)row.get("VEHICLE_NO"));
+			vehicle.setColor((String)row.get("COLOR"));
+			vehicle.setWheel((int)row.get("WHEEL"));
+			vehicle.setSeat((int)row.get("SEAT"));
+			return vehicle;
+		}).collect(Collectors.toList());
+		/*
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement ps = conn.prepareStatement(SELECT_ALL_SQL);
 				ResultSet rs = ps.executeQuery()){
@@ -109,6 +132,7 @@ public class PlainJdbcVehicleDao implements VehicleDao{
 		}catch (Exception e) {
 			throw new SQLException();
 		}
+		*/
 	}
 	
 	private Vehicle toVehicle(ResultSet rs) throws SQLException{
