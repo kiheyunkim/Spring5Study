@@ -6,7 +6,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
-@Configuration
+//@Configuration
 public class AsyncConfiguration extends WebMvcConfigurationSupport{
 	
 	@Override
@@ -21,5 +21,4 @@ public class AsyncConfiguration extends WebMvcConfigurationSupport{
 		taskExecutor.setThreadGroupName("mvc-executor");
 		return taskExecutor;
 	}
-
 }

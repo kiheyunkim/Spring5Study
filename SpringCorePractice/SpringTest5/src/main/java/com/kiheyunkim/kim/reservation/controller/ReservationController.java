@@ -1,7 +1,9 @@
 package com.kiheyunkim.kim.reservation.controller;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.Delayed;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -12,7 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import com.kiheyunkim.kim.reservation.model.Reservation;
 import com.kiheyunkim.kim.reservation.service.ReservationService;
@@ -48,6 +52,7 @@ public class ReservationController {
 		final ResponseBodyEmitter emitter = new ResponseBodyEmitter();
 		taskExecutor.execute(()->{
 			Collection<Reservation> reservations = reservationService.query(courtName);
+			System.out.println(reservations.size());
 			try {
 				for(Reservation reservation : reservations) {
 					emitter.send(reservation);					
@@ -56,6 +61,25 @@ public class ReservationController {
 			}catch (Exception e) {
 				emitter.completeWithError(e);
 			}
+		});
+		
+		return emitter;
+	}
+	
+	@GetMapping(params = "courtName2")
+	public SseEmitter find2(@RequestParam("courtName2") String courtName) {
+		final SseEmitter emitter = new SseEmitter();
+		taskExecutor.execute(()->{
+			Collection<Reservation> reservations = reservationService.query(courtName);
+			try {
+				for(Reservation reservation : reservations) {
+					Thread.sleep(10);
+					emitter.send(reservation);
+				}
+			} catch (Exception e) {
+				emitter.completeWithError(e);
+			}
+			emitter.complete();
 		});
 		
 		return emitter;
