@@ -36,5 +36,10 @@ public class Main {
 		for (Vehicle vehicle3 : vehicle2) {
 			System.out.println(vehicle3.getVehicleNo());			
 		}
+		
+		int count = vehicleDao.countAll();
+		System.out.println(count);
+		String color = vehicleDao.getColor("TEM0001");
+		System.out.println(color);
 	}
 }

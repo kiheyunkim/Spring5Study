@@ -4,28 +4,27 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 
-public class PlainJdbcVehicleDao implements VehicleDao{
+public class PlainJdbcVehicleDao extends JdbcDaoSupport implements VehicleDao{
 	public class VehicleRowMapper implements RowMapper<Vehicle>{
 		@Override
 		public Vehicle mapRow(ResultSet rs, int rowNum) throws SQLException {
-			// TODO Auto-generated method stub
 			return toVehicle(rs);
 		}
 	}
-	
 	
 	private static final String INSERT_SQL = "INSERT INTO VEHICLE (COLOR, WHEEL,SEAT, VEHICLE_NO)"
 			+ "VALUES (?,?,?,?)";
@@ -34,14 +33,19 @@ public class PlainJdbcVehicleDao implements VehicleDao{
 	private static final String SELECT_ALL_SQL = "SELECT * FROM VEHICLE";
 	private static final String SELECT_ONE_SQL = "SELECT * FROM VEHICLE WHERE VEHICLE_NO = ?";
 	
-	private final DataSource dataSource;
+	private static final String COUNT_ALL_SQL = "SELECT COUNT(*) FROM VEHICLE";
+	private static final String SELECT_COLOR_SQL = "SELECT COLOR FROM VEHICLE WHERE VEHICLE_NO = ?";
 
-	public PlainJdbcVehicleDao(DataSource dataSource) {
-		this.dataSource = dataSource;
+	public PlainJdbcVehicleDao() {
 	}
 	
 	@Override
 	public void insert(Vehicle vehicle) throws SQLException{
+		
+		getJdbcTemplate().update(INSERT_SQL, vehicle.getVehicleNo(),vehicle.getColor(),
+			vehicle.getWheel(),vehicle.getSeat());
+		
+		/*
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		
 		jdbcTemplate.update(new PreparedStatementCreator() {
@@ -52,6 +56,8 @@ public class PlainJdbcVehicleDao implements VehicleDao{
 				return ps;
 			}
 		});
+		*/
+		
 		/*
 		jdbcTemplate.update(con->{
 			PreparedStatement ps = con.prepareStatement(INSERT_SQL);
@@ -75,8 +81,19 @@ public class PlainJdbcVehicleDao implements VehicleDao{
 
 	@Override
 	public Vehicle findByVehicleNo(String vehicleNo) throws SQLException {
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		JdbcTemplate jdbcTemplate = getJdbcTemplate();
 		
+		//3번 케이스
+		return jdbcTemplate.queryForObject(SELECT_ONE_SQL, 
+				BeanPropertyRowMapper.newInstance(Vehicle.class),vehicleNo);
+		
+		//2번 케이스
+		/*
+		return jdbcTemplate.queryForObject(SELECT_ONE_SQL, new VehicleRowMapper(), vehicleNo);
+		*/
+		
+		//1번 케이스
+		/*
 		final Vehicle vehicle = new Vehicle();
 		jdbcTemplate.query(SELECT_ONE_SQL, new RowCallbackHandler() {
 			
@@ -90,6 +107,7 @@ public class PlainJdbcVehicleDao implements VehicleDao{
 		},vehicleNo);
 		
 		return vehicle;
+		*/
 	}
 	
 	@Override
@@ -107,7 +125,7 @@ public class PlainJdbcVehicleDao implements VehicleDao{
 
 	@Override
 	public List<Vehicle> findAll() throws SQLException {
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		JdbcTemplate jdbcTemplate = getJdbcTemplate();
 		
 		List<Map<String,Object>> rows = jdbcTemplate.queryForList(SELECT_ALL_SQL);
 		return rows.stream().map(row->{
@@ -118,6 +136,7 @@ public class PlainJdbcVehicleDao implements VehicleDao{
 			vehicle.setSeat((int)row.get("SEAT"));
 			return vehicle;
 		}).collect(Collectors.toList());
+		
 		/*
 		try(Connection conn = dataSource.getConnection();
 				PreparedStatement ps = conn.prepareStatement(SELECT_ALL_SQL);
@@ -153,4 +172,18 @@ public class PlainJdbcVehicleDao implements VehicleDao{
 		ps.setString(4, vehicle.getVehicleNo());
 	}
 
+	@Override
+	public String getColor(String vehicleNo) {
+		JdbcTemplate jdbcTemplate = getJdbcTemplate();
+		return jdbcTemplate.queryForObject(SELECT_COLOR_SQL, String.class, vehicleNo);
+	}
+
+	@Override
+	public int countAll() {
+		JdbcTemplate jdbcTemplate = getJdbcTemplate();
+		return jdbcTemplate.queryForObject(COUNT_ALL_SQL, Integer.class);
+	}
+
 }
+
+
