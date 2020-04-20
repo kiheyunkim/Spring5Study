@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -15,10 +17,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 
-public class PlainJdbcVehicleDao extends JdbcDaoSupport implements VehicleDao{
+public class PlainJdbcVehicleDao extends NamedParameterJdbcDaoSupport implements VehicleDao{
 	public class VehicleRowMapper implements RowMapper<Vehicle>{
 		@Override
 		public Vehicle mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -27,7 +33,7 @@ public class PlainJdbcVehicleDao extends JdbcDaoSupport implements VehicleDao{
 	}
 	
 	private static final String INSERT_SQL = "INSERT INTO VEHICLE (COLOR, WHEEL,SEAT, VEHICLE_NO)"
-			+ "VALUES (?,?,?,?)";
+			+ "VALUES (:color, :wheel, :seat, :vehicleNo)";
 	private static final String UPDATE_SQL = "UPDATE VEHICLE SET COLOR = ?, WHEEL = ?, SEAT = ? "
 			+ "WHERE VEHICLE+NO = ?";
 	private static final String SELECT_ALL_SQL = "SELECT * FROM VEHICLE";
@@ -39,36 +45,38 @@ public class PlainJdbcVehicleDao extends JdbcDaoSupport implements VehicleDao{
 	public PlainJdbcVehicleDao() {
 	}
 	
+	private Map<String,Object> toParameterMap(Vehicle vehicle){
+		Map<String,Object> parameters = new HashMap<String, Object>();
+		parameters.put("VehicleNo", vehicle.getVehicleNo());
+		parameters.put("color",vehicle.getColor());
+		parameters.put("wheel",vehicle.getWheel());
+		parameters.put("seat",vehicle.getSeat());
+		return parameters;
+	}
+	
 	@Override
 	public void insert(Vehicle vehicle) throws SQLException{
-		
-		getJdbcTemplate().update(INSERT_SQL, vehicle.getVehicleNo(),vehicle.getColor(),
-			vehicle.getWheel(),vehicle.getSeat());
-		
-		/*
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		
-		jdbcTemplate.update(new PreparedStatementCreator() {
-			@Override
-			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-				PreparedStatement ps = con.prepareStatement(INSERT_SQL);
-				preparedStatement(ps, vehicle);
-				return ps;
-			}
-		});
+		/* 1¹ø
+		getNamedParameterJdbcTemplate().update(INSERT_SQL, toParameterMap(vehicle));
 		*/
 		
-		/*
-		jdbcTemplate.update(con->{
-			PreparedStatement ps = con.prepareStatement(INSERT_SQL);
-			preparedStatement(ps, vehicle);
-			return ps;
-		});
-		*/
+		/* 2¹ø
+		SqlParameterSource parameterSource = new MapSqlParameterSource(toParameterMap((vehicle)));
+		 */
+		
+		/* 3¹ø */
+		SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(vehicle);
+		getNamedParameterJdbcTemplate().update(INSERT_SQL, parameterSource);
 	}
 
 	@Override
-	public void insert(Iterable<Vehicle> vehicles) {
+	public void insert(Collection<Vehicle> vehicles) {
+		SqlParameterSource[] sources = vehicles.stream()
+				.map(v -> new BeanPropertySqlParameterSource(v))
+				.toArray(size-> new SqlParameterSource[size]);
+		getNamedParameterJdbcTemplate().batchUpdate(INSERT_SQL, sources);
+		
+		
 		vehicles.forEach(elem -> {
 			try {
 				insert(elem);

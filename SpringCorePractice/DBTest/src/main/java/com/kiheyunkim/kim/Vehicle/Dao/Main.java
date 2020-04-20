@@ -16,14 +16,14 @@ public class Main {
 		vehicle.setColor("Red");
 		vehicle.setWheel(4);
 		vehicle.setSeat(4);
-		/*
+		
 		try {
 			vehicleDao.insert(vehicle);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		*/
+		
 		List<Vehicle> vehicle2 = null;
 		try {
 			vehicle2 = vehicleDao.findAll();
