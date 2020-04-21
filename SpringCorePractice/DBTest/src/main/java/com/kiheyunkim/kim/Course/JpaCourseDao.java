@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-
+//http://m.blog.daum.net/m2005m/18259549
 public class JpaCourseDao implements CourseDao {
 
 	private EntityManagerFactory entityManagerFactory;
