@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 public class JpaCourseDao implements CourseDao {
 
@@ -38,24 +39,36 @@ public class JpaCourseDao implements CourseDao {
 		EntityTransaction tx = manager.getTransaction();
 		try {
 			tx.begin();
-			manager.merge(courseId);
+			Course course = manager.find(Course.class, courseId);
+			manager.remove(course);
 			tx.commit();
 		} catch (RuntimeException e) {
-			// TODO: handle exception
+			tx.rollback();
+			throw e;
+		} finally {
+			manager.close();
 		}
-		
 	}
 
 	@Override
 	public Course findById(Long courseId) {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManager manager = entityManagerFactory.createEntityManager();
+		try {
+			return manager.find(Course.class, courseId);
+		} finally {
+			manager.close();
+		}
 	}
 
 	@Override
 	public List<Course> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManager manager = entityManagerFactory.createEntityManager();
+		try {
+			Query query = manager.createQuery("select course from Course course");
+			return query.getResultList();
+		} finally {
+			manager.close();
+		}
 	}
 
 	

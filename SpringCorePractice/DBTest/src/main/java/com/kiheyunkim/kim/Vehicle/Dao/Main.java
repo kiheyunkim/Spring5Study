@@ -1,15 +1,36 @@
 package com.kiheyunkim.kim.Vehicle.Dao;
 
-import java.sql.SQLException;
-import java.util.List;
+import java.util.Date;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.kiheyunkim.kim.Course.Course;
+import com.kiheyunkim.kim.Course.CourseDao;
+import com.kiheyunkim.kim.Course.JpaCourseDao;
 
 public class Main {
 	public static void main(String[] args) {
 		ApplicationContext context = new AnnotationConfigApplicationContext(VehicleConfiguration.class);
 		
+		CourseDao courseDao = new JpaCourseDao();
+		
+		Course course = new Course();
+		course.setBeginDate(new Date());
+		course.setEndDate(new Date());
+		course.setFee(10000);
+		course.setTitle("≈∏¿Ã∆≤");
+		courseDao.store(course);
+		
+		
+		Course courseResult = courseDao.findById(1L);
+		
+		System.out.println(courseResult);
+		
+		courseDao.delete(1L);
+		
+		
+		/*
 		VehicleDao vehicleDao = context.getBean(VehicleDao.class);
 		Vehicle vehicle = new Vehicle();
 		vehicle.setVehicleNo("TEM0001");
@@ -41,5 +62,6 @@ public class Main {
 		System.out.println(count);
 		String color = vehicleDao.getColor("TEM0001");
 		System.out.println(color);
+		*/
 	}
 }

@@ -12,10 +12,18 @@ public class Course {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
+	
+	@Column(name = "TITLE", length = 100, nullable = true)
 	private String title;
+	
+	@Column(name = "BEGIN_DATE")
 	private Date beginDate;
+	
+	@Column(name = "END_DATE")
 	private Date endDate;
-	private int free;
+	
+	@Column(name = "FEE")
+	private int fee;
 	
 	public Course() {
 		
@@ -53,11 +61,11 @@ public class Course {
 		this.endDate = endDate;
 	}
 
-	public int getFree() {
-		return free;
+	public int getFee() {
+		return fee;
 	}
 
-	public void setFree(int free) {
-		this.free = free;
+	public void setFee(int fee) {
+		this.fee = fee;
 	}	
 }
