@@ -22,8 +22,7 @@ public class HibernateCourseDao implements CourseDao{
 				.setProperty(AvailableSettings.DIALECT,"org.hibernate.dialect.MySQL57Dialect")
 				.setProperty(AvailableSettings.SHOW_SQL, String.valueOf(true))
 				.setProperty(AvailableSettings.HBM2DDL_AUTO, "update")
-				.addClass(Course.class);
-				//.addAnnotatedClass(Course.class);
+				.addAnnotatedClass(Course.class);
 		this.sessionFactory = configuration.buildSessionFactory();
 	}
 	

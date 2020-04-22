@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 		//ApplicationContext context = new AnnotationConfigApplicationContext(VehicleConfiguration.class);
 		
-		CourseDao courseDao = new HibernateCourseDao();
+		CourseDao courseDao = new JpaCourseDao();
 		
 		Course course= new Course();
 		course.setTitle("Core Spring");
@@ -23,10 +23,11 @@ public class Main {
 	
 		courseDao.store(course);
 		
+		Long courseId = course.getId();
+		System.out.println(courseId);
 		System.out.println("After persisting");
 		System.out.println(course);
 		
-		Long courseId = course.getId();
 		Course courseFromDb = courseDao.findById(courseId);
 		
 		System.out.println("fresh from DB");
