@@ -23,11 +23,11 @@ public class Main {
 		courseDao.store(course);
 		
 		
-		Course courseResult = courseDao.findById(1L);
+		Course courseResult = courseDao.findById(4L);
 		
 		System.out.println(courseResult);
 		
-		courseDao.delete(1L);
+		courseDao.delete(4L);
 		
 		
 		/*
