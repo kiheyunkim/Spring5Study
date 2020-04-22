@@ -7,23 +7,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.dialect.MySQL8Dialect;
 
 
 public class HibernateCourseDao implements CourseDao{
 
 	private final SessionFactory sessionFactory;
 	
-	public HibernateCourseDao() {
-		Configuration configuration = new Configuration()
-				.setProperty(AvailableSettings.URL, "jdbc:mysql://localhost:3306/vehicle?characterEncoding=UTF-8&serverTimezone=UTC")
-				.setProperty(AvailableSettings.USER, "root")
-				.setProperty(AvailableSettings.PASS, "----")
-				.setProperty(AvailableSettings.DIALECT,"org.hibernate.dialect.MySQL57Dialect")
-				.setProperty(AvailableSettings.SHOW_SQL, String.valueOf(true))
-				.setProperty(AvailableSettings.HBM2DDL_AUTO, "update")
-				.addAnnotatedClass(Course.class);
-		this.sessionFactory = configuration.buildSessionFactory();
+	public HibernateCourseDao(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
 	
 	@Override
@@ -49,7 +40,7 @@ public class HibernateCourseDao implements CourseDao{
 		Transaction tx = session.getTransaction();
 		try {
 			tx.begin();
-			Course course = session.get(Course.class, courseId);
+			Course course = (Course) session.get(Course.class, courseId);
 			session.delete(course);
 			tx.commit();
 		} catch (Exception e) {
@@ -65,7 +56,7 @@ public class HibernateCourseDao implements CourseDao{
 	public Course findById(Long courseId) {
 		Session session = sessionFactory.openSession();
 		try {
-			return session.get(Course.class, courseId);
+			return (Course) session.get(Course.class, courseId);
 		} finally {
 			session.close();
 		}
@@ -75,7 +66,7 @@ public class HibernateCourseDao implements CourseDao{
 	public List<Course> findAll() {
 		Session session = sessionFactory.openSession();
 		try {
-			return session.createQuery("SELECT c FROM Course c",Course.class).list();
+			return session.createQuery("SELECT c FROM Course c").list();
 		} finally {
 			session.close();
 		}

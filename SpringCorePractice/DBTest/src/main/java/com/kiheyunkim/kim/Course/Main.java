@@ -3,14 +3,15 @@ package com.kiheyunkim.kim.Course;
 import java.util.GregorianCalendar;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
 public class Main {
 	public static void main(String[] args) {
-		//ApplicationContext context = new AnnotationConfigApplicationContext(VehicleConfiguration.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(CourseConfiguration.class);
 		
-		CourseDao courseDao = new JpaCourseDao();
+		CourseDao courseDao = context.getBean(CourseDao.class);
 		
 		Course course= new Course();
 		course.setTitle("Core Spring");
@@ -34,5 +35,7 @@ public class Main {
 		System.out.println(courseFromDb);
 		
 		courseDao.delete(courseId);
+		
+		((ConfigurableApplicationContext)context).close();
 	}
 }
