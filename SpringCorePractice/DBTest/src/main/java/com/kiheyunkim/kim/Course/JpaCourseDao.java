@@ -17,13 +17,14 @@ public class JpaCourseDao implements CourseDao {
 	}
 	
 	@Override
-	public void store(Course course) {
+	public Course store(Course course) {
 		EntityManager manager = entityManagerFactory.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
 		try {
 			tx.begin();
 			manager.merge(course);
 			tx.commit();
+			return course;
 		} catch (RuntimeException e) {
 			tx.rollback();
 			throw e;

@@ -18,12 +18,12 @@ public class HibernateCourseDao implements CourseDao{
 		Configuration configuration = new Configuration()
 				.setProperty(AvailableSettings.URL, "jdbc:mysql://localhost:3306/vehicle?characterEncoding=UTF-8&serverTimezone=UTC")
 				.setProperty(AvailableSettings.USER, "root")
-				.setProperty(AvailableSettings.PASS, "toor")
+				.setProperty(AvailableSettings.PASS, "----")
 				.setProperty(AvailableSettings.DIALECT,"org.hibernate.dialect.MySQL57Dialect")
 				.setProperty(AvailableSettings.SHOW_SQL, String.valueOf(true))
 				.setProperty(AvailableSettings.HBM2DDL_AUTO, "update")
-				//.addClass(Course.class);
-				.addAnnotatedClass(Course.class);
+				.addClass(Course.class);
+				//.addAnnotatedClass(Course.class);
 		this.sessionFactory = configuration.buildSessionFactory();
 	}
 	

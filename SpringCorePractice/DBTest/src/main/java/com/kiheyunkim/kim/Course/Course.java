@@ -3,19 +3,29 @@ package com.kiheyunkim.kim.Course;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
+	
+	@Column(name = "TITLE", length = 100, nullable = false)
 	private String title;
+	
+	@Column(name = "BEGIN_DATE")
 	private Date beginDate;
+	
+	@Column(name = "END_DATE")
 	private Date endDate;
-	private int free;
+	
+	@Column(name = "FEE")
+	private int fee;
 	
 	public Course() {
 		
@@ -53,11 +63,11 @@ public class Course {
 		this.endDate = endDate;
 	}
 
-	public int getFree() {
-		return free;
+	public int getFee() {
+		return fee;
 	}
 
-	public void setFree(int free) {
-		this.free = free;
+	public void setFee(int fee) {
+		this.fee = fee;
 	}	
 }
