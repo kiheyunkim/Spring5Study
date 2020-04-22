@@ -7,7 +7,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+<<<<<<< HEAD
 
+=======
+//http://m.blog.daum.net/m2005m/18259549
+>>>>>>> 7693aa97cb6c3669f9353477d86af0ee08591440
 public class JpaCourseDao implements CourseDao {
 
 	private EntityManagerFactory entityManagerFactory;
@@ -46,11 +50,14 @@ public class JpaCourseDao implements CourseDao {
 		} catch (RuntimeException e) {
 			tx.rollback();
 			throw e;
+<<<<<<< HEAD
 		}
 		finally {
+=======
+		} finally {
+>>>>>>> 7693aa97cb6c3669f9353477d86af0ee08591440
 			manager.close();
 		}
-		
 	}
 
 	@Override

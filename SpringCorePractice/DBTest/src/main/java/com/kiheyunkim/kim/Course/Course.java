@@ -8,15 +8,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+<<<<<<< HEAD
 @Entity
 @Table(name = "COURSE")
+=======
+
+@Entity
+@Table(name="COURSE")
+>>>>>>> 7693aa97cb6c3669f9353477d86af0ee08591440
 public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
 	
+<<<<<<< HEAD
 	@Column(name = "TITLE", length = 100, nullable = false)
+=======
+	@Column(name = "TITLE", length = 100, nullable = true)
+>>>>>>> 7693aa97cb6c3669f9353477d86af0ee08591440
 	private String title;
 	
 	@Column(name = "BEGIN_DATE")
