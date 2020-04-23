@@ -4,14 +4,18 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
+@Lazy
 public class HibernateCourseDao implements CourseDao{
 
 	private final SessionFactory sessionFactory;
 	
+	@Autowired
 	public HibernateCourseDao(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}

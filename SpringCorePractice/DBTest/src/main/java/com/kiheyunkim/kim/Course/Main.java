@@ -12,6 +12,7 @@ public class Main {
 		ApplicationContext context = new AnnotationConfigApplicationContext(CourseConfiguration.class);
 		
 		CourseDao courseDao = context.getBean(CourseDao.class);
+		System.out.println(courseDao);
 		
 		Course course= new Course();
 		course.setTitle("Core Spring");
