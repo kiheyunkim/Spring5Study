@@ -4,11 +4,10 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.AvailableSettings;
-import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-
+@Repository
 public class HibernateCourseDao implements CourseDao{
 
 	private final SessionFactory sessionFactory;
@@ -18,58 +17,34 @@ public class HibernateCourseDao implements CourseDao{
 	}
 	
 	@Override
+	@Transactional
 	public Course store(Course course) {
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.getTransaction();
-		try {
-			tx.begin();
-			session.saveOrUpdate(course);
-			tx.commit();
-			return course;
-		} catch (Exception e) {
-			tx.rollback();
-			throw e;
-		}finally {
-			session.close();
-		}
+		session.saveOrUpdate(course);
+		session.close();
+		return course;
 	}
 
 	@Override
+	@Transactional
 	public void delete(Long courseId) {
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.getTransaction();
-		try {
-			tx.begin();
-			Course course = (Course) session.get(Course.class, courseId);
-			session.delete(course);
-			tx.commit();
-		} catch (Exception e) {
-			tx.rollback();
-			throw e;
-		}
-		finally {
-			session.close();
-		}
+		Course course = (Course) session.get(Course.class, courseId);
+		session.delete(course);
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public Course findById(Long courseId) {
 		Session session = sessionFactory.openSession();
-		try {
-			return (Course) session.get(Course.class, courseId);
-		} finally {
-			session.close();
-		}
+		return (Course) session.get(Course.class,courseId);
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<Course> findAll() {
 		Session session = sessionFactory.openSession();
-		try {
-			return session.createQuery("SELECT c FROM Course c").list();
-		} finally {
-			session.close();
-		}
+		return session.createQuery("SELECT c FROM Course c").list();		
 	}
 
 }
