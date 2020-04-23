@@ -21,21 +21,22 @@ import com.zaxxer.hikari.HikariDataSource;
 public class CourseConfiguration {
 	
 	@Bean
-	public LocalSessionFactoryBean sessionFactory() {
+	public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
 		LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
 		sessionFactoryBean.setHibernateProperties(hibernateProperties());
-		sessionFactoryBean.setDataSource(getDataSource());
+		sessionFactoryBean.setDataSource(dataSource);
 		sessionFactoryBean.setAnnotatedClasses(new Class[] {Course.class});
+		
 		return sessionFactoryBean;
 	}
 	
 	@Bean
-	public CourseDao courseDao(@Autowired SessionFactory sessionFactory) {
+	public CourseDao courseDao(SessionFactory sessionFactory) {
 		return new HibernateCourseDao(sessionFactory);
 	}
 	
-	@Bean 
-	public HibernateTransactionManager transactionManager(@Autowired SessionFactory sessionFactory) {
+	@Bean
+	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager();
 		transactionManager.setSessionFactory(sessionFactory);
 		return transactionManager;

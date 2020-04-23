@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-@Lazy
 public class HibernateCourseDao implements CourseDao{
 
 	private final SessionFactory sessionFactory;
