@@ -7,15 +7,21 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 //http://m.blog.daum.net/m2005m/18259549
+@Repository(value = "courseDao")
 public class JpaCourseDao implements CourseDao {
 
 	@PersistenceContext
 	private EntityManager entityManager;
+	
+	@PersistenceUnit
+	private EntityManagerFactory entityManagerFactory;
 		
 	@Override
 	@Transactional
