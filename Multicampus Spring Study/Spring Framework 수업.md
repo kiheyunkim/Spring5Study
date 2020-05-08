@@ -1,7 +1,13 @@
 # Spring Framework 수업 1일차
 
-- DI, Spring-Test, jdbc, MyBatis, AOP, Servlet/JSP Spring MVC (JSP, JSTL)
-- REST Service (JSON, XML)
+* 공부할 것
+  * Java 연습문제 2개
+  * Spring DI(Dependency Injection) 이란?
+  * JUnit 이란?
+
+* 앞으로 배울 것
+  * DI, Spring-Test, jdbc, MyBatis, AOP, Servlet/JSP Spring MVC (JSP, JSTL)
+  * REST Service (JSON, XML)
 
 ### Spring Boot
 
@@ -15,6 +21,11 @@ kbstart.cms.dao (Data access object, db 연결)
                   .mapper
 
 등등 룰은 그 집단, 회사에 따라서 다르게 감
+
+### Eclipse 단축기
+
+* Ctrl + S  저장하기
+* 
 
 
 
@@ -60,9 +71,24 @@ Multiple markers at this line
 
 * CreateStatement() 같은 구현체 = Factory Method.
 
+  private 아무도 접근 불가능함
+  protected 같은 패키지와 상속 관계에서 접근 가능함.
+  default 같은 패키지의 상속관계까지만 접근 가능함
+  public 모두 접근 가능
 
+Spring의 등장배경
+: EJB를 사용하지 않고(WAS가 없이도) 자바 기반 엔터프라이즈 어플리케이션을 POJO(Plain Old Java Object)를 기반으로 작성할 수 있도록 해주겠다.
 
+WSA(Web Application Server)
+:Web Container + EJB Container
+:J2EE API 구현체, 미들웨어
 
+* Web Container + EJB Container
+
+* Tomcat 은 Web Container / Web Server?
+  * Web Container이 정답
+* Apache, NginX에서 JSP 실행은 불가능 -> Web Server 이기 때문에 불가능하다.
+* Spring framework는 EJB 없이 (WSA) 없어도 돌리기 위한 것.
 
 
 
