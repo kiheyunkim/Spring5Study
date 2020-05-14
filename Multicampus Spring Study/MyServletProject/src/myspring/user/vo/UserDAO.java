@@ -133,5 +133,41 @@ public class UserDAO {
 		return userList;
 	}//getUserList
 	
+	public int insert(UserVO userVO) {
+		String sql = "insert into users values(?,?,?,?)";
+		Connection con = null;
+		PreparedStatement stmt = null;
+		int updateCnt = 0;
+		try {
+			con = getConnection();
+			//auto commit 해제
+			con.setAutoCommit(false);
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, userVO.getName());
+			stmt.setString(2, userVO.getGender());
+			stmt.setString(3, userVO.getCity());
+			stmt.setString(4, userVO.getUserId());
+			updateCnt = stmt.executeUpdate();
+			//커밋
+			con.commit();
+		}catch(SQLException e) {
+			//롤백
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}finally {
+			try {
+				close(stmt,con);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return updateCnt;
+	}
 	
 }

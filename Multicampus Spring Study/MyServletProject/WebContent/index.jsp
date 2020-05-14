@@ -18,6 +18,9 @@
 		out.println(myDate);
 	%>
 	<p>현재 날짜는 <%=myDate %></p>
-	<ul><h4><a href="userlist.do">사용자 리스트</a></h4></ul>
+	<ul>
+	  <li><h4><a href="userlist.do?cmd=user_list">사용자 리스트</a></h4></li>
+	  <li><h4><a href="userForm.do?cmd=user_form">사용자 등록</a></h4></li>
+	</ul>
 </body>
 </html>
