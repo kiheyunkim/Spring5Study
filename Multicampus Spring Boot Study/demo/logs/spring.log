@@ -1,0 +1,191 @@
+2020-05-15 15:23:26.613  INFO 2816 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on M130412 with PID 2816 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 15:23:26.616  INFO 2816 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-15 15:23:27.347  INFO 2816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 15:23:27.355  INFO 2816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-15 15:23:27.356  INFO 2816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 15:23:27.439  INFO 2816 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-15 15:23:27.439  INFO 2816 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 788 ms
+2020-05-15 15:23:27.629  INFO 2816 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 15:23:27.696  INFO 2816 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 15:23:27.801  INFO 2816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-15 15:23:27.804  INFO 2816 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.534 seconds (JVM running for 2.475)
+2020-05-15 15:26:39.243  INFO 2816 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-15 15:26:39.245  INFO 2816 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 15:26:45.438  INFO 14960 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on M130412 with PID 14960 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 15:26:45.440 DEBUG 14960 --- [main] com.example.demo.DemoApplication         : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-05-15 15:26:45.441  INFO 14960 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-15 15:26:46.204  INFO 14960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 15:26:46.212  INFO 14960 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-15 15:26:46.213  INFO 14960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 15:26:46.285  INFO 14960 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-15 15:26:46.286  INFO 14960 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 811 ms
+2020-05-15 15:26:46.452  INFO 14960 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 15:26:46.506  INFO 14960 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 15:26:46.602  INFO 14960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-15 15:26:46.605  INFO 14960 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.526 seconds (JVM running for 2.456)
+2020-05-15 15:38:05.112  INFO 14984 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests on M130412 with PID 14984 (started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 15:38:05.113 DEBUG 14984 --- [main] com.example.demo.DemoApplicationTests    : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-05-15 15:38:05.114  INFO 14984 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to default profiles: default
+2020-05-15 15:38:06.536  INFO 14984 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 15:38:06.637  INFO 14984 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 15:38:06.845  INFO 14984 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.091 seconds (JVM running for 3.275)
+2020-05-15 15:38:06.847  INFO 14984 --- [main] com.example.demo.runner.MyRunner         : Print"boot"
+2020-05-15 15:38:06.847 DEBUG 14984 --- [main] com.example.demo.runner.MyRunner         : Print20
+2020-05-15 15:38:06.847 DEBUG 14984 --- [main] com.example.demo.runner.MyRunner         : Print"??��????��?" + "boot" 
+2020-05-15 15:38:07.180  INFO 14984 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 15:38:54.228  INFO 14960 --- [RMI TCP Connection(19)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-15 15:38:54.231  INFO 14960 --- [RMI TCP Connection(19)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:19:28.351  INFO 15168 --- [main] c.e.d.DemoApplication                    : Starting DemoApplication on M130412 with PID 15168 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 16:19:28.360 DEBUG 15168 --- [main] c.e.d.DemoApplication                    : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-05-15 16:19:28.361  INFO 15168 --- [main] c.e.d.DemoApplication                    : No active profile set, falling back to default profiles: default
+2020-05-15 16:19:29.186  INFO 15168 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 16:19:29.204  INFO 15168 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-05-15 16:19:29.204  INFO 15168 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 16:19:29.285  INFO 15168 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-05-15 16:19:29.285  INFO 15168 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 883 ms
+2020-05-15 16:19:29.445  INFO 15168 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:19:29.498  INFO 15168 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 16:19:29.668  INFO 15168 --- [main] o.a.c.c.StandardService                  : Stopping service [Tomcat]
+2020-05-15 16:19:29.675  INFO 15168 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-15 16:19:29.679 ERROR 15168 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2020-05-15 16:19:29.681  INFO 15168 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:19:46.793  INFO 1328 --- [main] c.e.d.DemoApplication                    : Starting DemoApplication on M130412 with PID 1328 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 16:19:46.801 DEBUG 1328 --- [main] c.e.d.DemoApplication                    : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-05-15 16:19:46.803  INFO 1328 --- [main] c.e.d.DemoApplication                    : No active profile set, falling back to default profiles: default
+2020-05-15 16:19:47.576  INFO 1328 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 16:19:47.593  INFO 1328 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-05-15 16:19:47.593  INFO 1328 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 16:19:47.674  INFO 1328 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-05-15 16:19:47.675  INFO 1328 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 841 ms
+2020-05-15 16:19:47.836  INFO 1328 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:19:47.891  INFO 1328 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 16:19:48.068  INFO 1328 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-15 16:19:48.071  INFO 1328 --- [main] c.e.d.DemoApplication                    : Started DemoApplication in 1.663 seconds (JVM running for 3.141)
+2020-05-15 16:19:48.072  INFO 1328 --- [main] c.e.d.r.MyRunner                         : Print"boot"
+2020-05-15 16:19:48.073 DEBUG 1328 --- [main] c.e.d.r.MyRunner                         : Print53
+2020-05-15 16:19:48.073 DEBUG 1328 --- [main] c.e.d.r.MyRunner                         : Print"ì¤íë§" + "boot" 
+2020-05-15 16:20:17.252  INFO 1328 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-15 16:20:17.254  INFO 1328 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:20:24.074  INFO 12228 --- [main] c.e.d.DemoApplication                    : Starting DemoApplication on M130412 with PID 12228 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 16:20:24.083  INFO 12228 --- [main] c.e.d.DemoApplication                    : No active profile set, falling back to default profiles: default
+2020-05-15 16:20:24.859  INFO 12228 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 16:20:24.876  INFO 12228 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-05-15 16:20:24.876  INFO 12228 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 16:20:24.954  INFO 12228 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-05-15 16:20:24.955  INFO 12228 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 838 ms
+2020-05-15 16:20:25.115  INFO 12228 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:20:25.174  INFO 12228 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 16:20:25.349  INFO 12228 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-15 16:20:25.351  INFO 12228 --- [main] c.e.d.DemoApplication                    : Started DemoApplication in 1.663 seconds (JVM running for 3.17)
+2020-05-15 16:20:25.353  INFO 12228 --- [main] c.e.d.r.MyRunner                         : Print"boot"
+2020-05-15 16:22:15.541  INFO 12228 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-15 16:22:15.543  INFO 12228 --- [RMI TCP Connection(10)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:22:28.885  INFO 7824 --- [main] c.e.d.DemoApplication                    : Starting DemoApplication on M130412 with PID 7824 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 16:22:28.898  INFO 7824 --- [main] c.e.d.DemoApplication                    : No active profile set, falling back to default profiles: default
+2020-05-15 16:22:29.702  INFO 7824 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 16:22:29.719  INFO 7824 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-05-15 16:22:29.719  INFO 7824 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 16:22:29.796  INFO 7824 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-05-15 16:22:29.796  INFO 7824 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 865 ms
+2020-05-15 16:22:29.956  INFO 7824 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:22:30.016  INFO 7824 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 16:22:30.194  INFO 7824 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-15 16:22:30.198  INFO 7824 --- [main] c.e.d.DemoApplication                    : Started DemoApplication in 1.712 seconds (JVM running for 3.181)
+2020-05-15 16:22:30.199  INFO 7824 --- [main] c.e.d.r.MyRunner                         : Print"boot"
+2020-05-15 16:22:58.798  INFO 7824 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-15 16:22:58.803  INFO 7824 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:23:12.430  INFO 11868 --- [main] c.e.d.DemoApplication                    : Starting DemoApplication on M130412 with PID 11868 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 16:23:12.439  INFO 11868 --- [main] c.e.d.DemoApplication                    : No active profile set, falling back to default profiles: default
+2020-05-15 16:23:13.221  INFO 11868 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 16:23:13.237  INFO 11868 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-05-15 16:23:13.238  INFO 11868 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 16:23:13.315  INFO 11868 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-05-15 16:23:13.316  INFO 11868 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 845 ms
+2020-05-15 16:23:13.477  INFO 11868 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:23:13.539  INFO 11868 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 16:23:13.714  INFO 11868 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-15 16:23:13.717  INFO 11868 --- [main] c.e.d.DemoApplication                    : Started DemoApplication in 1.675 seconds (JVM running for 3.167)
+2020-05-15 16:23:13.719  INFO 11868 --- [main] c.e.d.r.MyRunner                         : Print"boot"
+2020-05-15 16:25:39.347  INFO 11868 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-15 16:25:39.350  INFO 11868 --- [RMI TCP Connection(10)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:25:46.137  INFO 9632 --- [main] c.e.d.DemoApplication                    : Starting DemoApplication on M130412 with PID 9632 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 16:25:46.146 DEBUG 9632 --- [main] c.e.d.DemoApplication                    : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-05-15 16:25:46.147  INFO 9632 --- [main] c.e.d.DemoApplication                    : No active profile set, falling back to default profiles: default
+2020-05-15 16:25:46.923  INFO 9632 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 16:25:46.940  INFO 9632 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-05-15 16:25:46.940  INFO 9632 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 16:25:47.015  INFO 9632 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-05-15 16:25:47.016  INFO 9632 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 837 ms
+2020-05-15 16:25:47.180  INFO 9632 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:25:47.237  INFO 9632 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 16:25:47.413  INFO 9632 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-15 16:25:47.416  INFO 9632 --- [main] c.e.d.DemoApplication                    : Started DemoApplication in 1.681 seconds (JVM running for 3.154)
+2020-05-15 16:25:47.417  INFO 9632 --- [main] c.e.d.r.MyRunner                         : Print"boot"
+2020-05-15 16:25:47.417 DEBUG 9632 --- [main] c.e.d.r.MyRunner                         : Print13
+2020-05-15 16:25:47.418 DEBUG 9632 --- [main] c.e.d.r.MyRunner                         : Print"ì¤íë§" + "boot" 
+2020-05-15 16:26:24.468  INFO 9632 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-15 16:26:24.470  INFO 9632 --- [RMI TCP Connection(8)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:26:31.266  INFO 12904 --- [main] c.e.d.DemoApplication                    : Starting DemoApplication on M130412 with PID 12904 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 16:26:31.274 DEBUG 12904 --- [main] c.e.d.DemoApplication                    : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-05-15 16:26:31.275  INFO 12904 --- [main] c.e.d.DemoApplication                    : No active profile set, falling back to default profiles: default
+2020-05-15 16:26:32.079  INFO 12904 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 16:26:32.096  INFO 12904 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-05-15 16:26:32.097  INFO 12904 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 16:26:32.173  INFO 12904 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-05-15 16:26:32.173  INFO 12904 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 866 ms
+2020-05-15 16:26:32.218  WARN 12904 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'DBRunner': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.activation.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-05-15 16:26:32.221  INFO 12904 --- [main] o.a.c.c.StandardService                  : Stopping service [Tomcat]
+2020-05-15 16:26:32.233  INFO 12904 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-15 16:26:32.329 ERROR 12904 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.example.demo.runner.DBRunner required a bean of type 'javax.activation.DataSource' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'javax.activation.DataSource' in your configuration.
+
+2020-05-15 16:27:14.448  INFO 14856 --- [main] c.e.d.DemoApplication                    : Starting DemoApplication on M130412 with PID 14856 (C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo\target\classes started by student in C:\Users\student\Desktop\github\SpringFramework-5Study\Multicampus Spring Boot Study\demo)
+2020-05-15 16:27:14.457 DEBUG 14856 --- [main] c.e.d.DemoApplication                    : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-05-15 16:27:14.458  INFO 14856 --- [main] c.e.d.DemoApplication                    : No active profile set, falling back to default profiles: default
+2020-05-15 16:27:15.241  INFO 14856 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8081 (http)
+2020-05-15 16:27:15.257  INFO 14856 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-05-15 16:27:15.257  INFO 14856 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-15 16:27:15.335  INFO 14856 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-05-15 16:27:15.335  INFO 14856 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 844 ms
+2020-05-15 16:27:15.537  INFO 14856 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-15 16:27:15.597  INFO 14856 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-05-15 16:27:15.738  INFO 14856 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-15 16:27:15.742  INFO 14856 --- [main] c.e.d.DemoApplication                    : Started DemoApplication in 1.685 seconds (JVM running for 3.15)
+2020-05-15 16:27:15.743  INFO 14856 --- [main] c.e.d.r.MyRunner                         : Print"boot"
+2020-05-15 16:27:15.743 DEBUG 14856 --- [main] c.e.d.r.MyRunner                         : Print40
+2020-05-15 16:27:15.744 DEBUG 14856 --- [main] c.e.d.r.MyRunner                         : Print"ì¤íë§" + "boot" 
+2020-05-15 16:27:15.744  INFO 14856 --- [main] c.e.d.r.DBRunner                         : com.zaxxer.hikari.HikariDataSource
+2020-05-15 16:28:27.217  INFO 14856 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-15 16:28:27.219  INFO 14856 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
